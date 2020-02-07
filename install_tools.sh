@@ -5,6 +5,7 @@ source env.sh
 install_tools() {
     setup_zsh
     setup_vim
+    install_vcstool
 }
 
 setup_zsh() {
@@ -40,4 +41,8 @@ setup_vim() {
     # compile YouCompleteMe core
     python3 ~/.vim/bundle/YouCompleteMe/install.py --clang-completer
 
+}
+
+install_vcstool() {
+    sudo apt-get install python3-vcstool
 }

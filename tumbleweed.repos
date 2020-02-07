@@ -1,0 +1,5 @@
+repositories:
+  ttw_ros_sensors:
+    type: git
+    url: git@github.com:braineniac/ttw_ros_sensors.git
+    version: master

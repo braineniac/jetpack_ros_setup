@@ -97,5 +97,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
 source ~/.aliases
 source ~/.env
+
+source /opt/ros/melodic/local_setup.zsh
+source ~/ros/install/local_setup.zsh
+
+source /usr/share/vcstool-completion/vcs.zsh

@@ -14,11 +14,19 @@ setup_env() {
     ln -s $SCRIPT_DIR/conf/aliases ~/.aliases
 }
 
+change_hostname() {
+    sudo cp $SCRIPT_DIR/conf/hostname /etc/hostname
+    sudo cp $SCRIPT_DIR/conf/hosts /etc/hosts
+}
+
 main() {
     update_system
     setup_env
-    install_tools
     install_ros
+    install_tools
+
+    change_hostname
+    # sudo reboot
 }
 
 main

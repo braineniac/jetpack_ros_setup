@@ -8,6 +8,7 @@ install_ros() {
     setup_sources
     install_build_tools
     setup_workspace
+    install_colcon
 }
 
 setup_ppa() {
@@ -31,4 +32,8 @@ install_build_tools() {
 
 setup_workspace() {
     mkdir -p $HOME/ros/src
+}
+
+install_colcon() {
+    sudo apt install python3-colcon-common-extensions -y
 }
