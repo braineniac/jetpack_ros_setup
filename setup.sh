@@ -21,19 +21,25 @@ main() {
 update_system() {
     log "Updating system"
     sudo apt update
-#    sudo apt upgrade -y
+    check
+    sudo apt upgrade -y
+    check
 }
 
 setup_env() {
     log "Linking eenviroment"
     ln -sv $SCRIPT_DIR/conf/env ~/.env
+    check
     ln -sv $SCRIPT_DIR/conf/aliases ~/.aliases
+    check
 }
 
 change_hostname() {
     log "Setting hostname"
     sudo cp $SCRIPT_DIR/conf/hostname /etc/hostname
+    check
     sudo cp $SCRIPT_DIR/conf/hosts /etc/hosts
+    check
 }
 
 reboot_system() {
