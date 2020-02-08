@@ -17,10 +17,10 @@ clone_packages() {
 
 install_ws_deps() {
     log "Installing requirements"
-    rosdep install --from-paths $HOME/ros/src  --ignore-src -r -y
+    source /opt/ros/melodic/setup.bash; rosdep install --from-paths $HOME/ros/src  --ignore-src -r -y
 }
 
 compile_ws() {
     log "Compiling packages"
-    cd ~/ros; colcon build
+    source /opt/ros/melodic/setup.bash; cd ~/ros; colcon build
 }
