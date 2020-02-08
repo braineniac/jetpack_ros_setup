@@ -1,35 +1,40 @@
 #!/usr/bin/env bash
 
 source env.sh
+source logging.sh
 
 install_tools() {
+    log "Installing tools"
+    
     setup_zsh
     setup_vim
-		install_tmux
+    install_tmux
     install_vcstool
 }
 
 setup_zsh() {
-
+    log "Installing zsh"
+    
     # install zsh
     sudo apt install zsh -y
 
     # install oh-my-zsh to ~/.oh-my-zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-		# backup old .zshrc
-		mv $HOME/.zshrc $HOME/.zshrc.old
+    # backup old .zshrc
+    mv $HOME/.zshrc $HOME/.zshrc.old
 
     # create link
     ln -s $SCRIPT_DIR/conf/zshrc ~/.zshrc
 
-		# switch user to zsh
+    # switch user to zsh
     sudo usermod -s /bin/zsh $USER
 
 }
 
 setup_vim() {
-
+    log "Setting up vim"
+    
     # install vim
     sudo apt install vim -y
 
@@ -48,9 +53,7 @@ setup_vim() {
 }
 
 install_tmux() {
-				sudo apt install tmux -y
+    log "Installing tmux"
+    sudo apt install tmux -y
 }
 
-install_vcstool() {
-    sudo apt-get install python3-vcstool
-}
