@@ -17,5 +17,3 @@ install_ws_deps() {
 compile_ws() {
     cd ~/ros; colcon build
 }
-
-setup_tumbleweed
