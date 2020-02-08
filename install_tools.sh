@@ -14,13 +14,16 @@ setup_zsh() {
     # install zsh
     sudo apt install zsh -y
 
-    # create link
-    ln -s $SCRIPT_DIR/conf/zshrc ~/.zshrc
-
     # install oh-my-zsh to ~/.oh-my-zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-    # switch user to zsh
+		# backup old .zshrc
+		mv $HOME/.zshrc $HOME/.zshrc.old
+
+    # create link
+    ln -s $SCRIPT_DIR/conf/zshrc ~/.zshrc
+
+		# switch user to zsh
     sudo usermod -s /bin/zsh $USER
 
 }
