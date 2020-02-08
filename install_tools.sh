@@ -20,7 +20,7 @@ setup_zsh() {
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
     # switch user to zsh
-    chsh -s /bin/zsh
+    sudo usermod -s /bin/zsh $USER
 
 }
 
