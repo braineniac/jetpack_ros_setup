@@ -3,6 +3,7 @@
 source env.sh
 source install_ros.sh
 source install_tools.sh
+source setup_tumbleweed.sh
 
 update_system() {
     sudo apt update
@@ -25,8 +26,10 @@ main() {
     install_ros
     install_tools
 
+    setup_tumbleweed
+
     change_hostname
-    # sudo reboot
+    sudo reboot
 }
 
 main
