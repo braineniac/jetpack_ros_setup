@@ -5,6 +5,7 @@ source env.sh
 install_tools() {
     setup_zsh
     setup_vim
+		install_tmux
     install_vcstool
 }
 
@@ -41,6 +42,10 @@ setup_vim() {
     # compile YouCompleteMe core
     python3 ~/.vim/bundle/YouCompleteMe/install.py --clang-completer
 
+}
+
+install_tmux() {
+				sudo apt install tmux -y
 }
 
 install_vcstool() {
