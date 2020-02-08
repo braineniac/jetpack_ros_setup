@@ -12,10 +12,9 @@ log() {
 }
 
 check() {
-    "$@"
     local status=$?
-    if [ $status -ne 0 ]; then
-        echo "Error with $1" >&2
+    if [[ $status -ne 0 ]]; then
+        echo "Script error!"
         exit 1
     fi
     return $status
