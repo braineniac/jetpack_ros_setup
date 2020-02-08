@@ -21,7 +21,7 @@ main() {
 update_system() {
     log "Updating system"
     sudo apt update
-    sudo apt upgrade -y
+#    sudo apt upgrade -y
 }
 
 setup_env() {
@@ -41,4 +41,4 @@ reboot_system() {
     sudo reboot
 }
 
-main
+main 2>&1 | tee $LOGFILE
