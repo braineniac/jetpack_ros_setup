@@ -10,7 +10,6 @@ install_ros() {
     setup_sources
     install_build_tools
     setup_workspace
-    install_colcon
 }
 
 setup_ppa() {
@@ -39,7 +38,7 @@ setup_sources() {
 
 install_build_tools() {
     log "Installing useful ROS build tools"
-    sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential python3-colcon-common-extensions python3-vcstool-y
+    sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential python3-colcon-common-extensions python3-vcstool -y
     check
 }
 

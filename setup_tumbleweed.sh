@@ -12,7 +12,7 @@ setup_tumbleweed() {
 
 clone_packages() {
     log "Cloning tumbleweed packages"
-    cd ~/ros/src; vcs import < $HOME/jetpack_ros_setup/tumbleweed.repos
+    cd ~/ros/src; vcs import < $SCRIPT_DIR/tumbleweed.repos
 }
 
 install_ws_deps() {

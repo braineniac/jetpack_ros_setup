@@ -9,7 +9,6 @@ install_tools() {
     setup_zsh
     setup_vim
     install_tmux
-    install_vcstool
 }
 
 setup_zsh() {
